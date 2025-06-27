@@ -1,6 +1,5 @@
 package com.madarsoft.task.core
 
-import com.madarsoft.task.core.BaseDataResponse
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 
