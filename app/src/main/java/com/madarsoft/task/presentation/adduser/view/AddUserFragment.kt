@@ -11,6 +11,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import androidx.navigation.fragment.findNavController
 import com.madarsoft.task.R
 import com.madarsoft.task.databinding.FragmentAddUserBinding
 import com.madarsoft.task.presentation.adduser.AddUserViewModel
@@ -45,6 +46,10 @@ class AddUserFragment : Fragment() {
                     }
                 }
             }
+        }
+
+        binding.registeredUsers.setOnClickListener {
+            findNavController().navigate(R.id.users_list_fragment)
         }
     }
 
