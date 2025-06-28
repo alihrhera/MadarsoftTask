@@ -42,7 +42,8 @@ fun AddUserScreen(
 
     LaunchedEffect(toastMessage) {
         toastMessage?.let {
-            Toast.makeText(context, it, Toast.LENGTH_SHORT).show()
+            if (it.isNotBlank())
+                Toast.makeText(context, it, Toast.LENGTH_SHORT).show()
         }
     }
 
