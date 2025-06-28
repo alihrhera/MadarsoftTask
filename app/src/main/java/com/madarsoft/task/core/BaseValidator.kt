@@ -1,6 +1,6 @@
 package com.madarsoft.task.core
 
-interface BaseValidator<in T> {
+interface BaseValidator< T> {
     /**
      * Validate the given value.
      * @throws Exception if the value is invalid.

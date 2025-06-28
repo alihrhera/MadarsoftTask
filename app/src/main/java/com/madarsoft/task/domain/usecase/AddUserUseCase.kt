@@ -18,8 +18,12 @@ class AddUserUseCase @Inject constructor(
 ) : BaseUseCase<UserEntity, MutableStateFlow<BaseDataResponse<User>>> {
     suspend operator fun invoke(user: UserEntity):
             MutableStateFlow<BaseDataResponse<User>> {
-        validator.validate(user)
-        return execute(user)
+        return try {
+            validator.validate(user)
+            execute(user)
+        } catch (e: Throwable) {
+            MutableStateFlow(BaseDataResponse.Error(throwable = e))
+        }
     }
 
     private suspend fun mapResponse(response: Flow<BaseDataResponse<UserEntity>>) = mapResponseToStateFlow(response, mapper)
