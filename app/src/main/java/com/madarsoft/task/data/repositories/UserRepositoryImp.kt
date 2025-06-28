@@ -19,4 +19,10 @@ class UserRepositoryImp @Inject constructor(
             }
         }
     }
+
+    override suspend fun getLocalUser(): Flow<BaseDataResponse<List<UserEntity>>> {
+        return buildTask {
+            localDao.getAllRows()
+        }
+    }
 }
