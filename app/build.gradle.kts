@@ -4,6 +4,7 @@ plugins {
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.hilt)
     alias(libs.plugins.kotlin.ksp)
+    alias(libs.plugins.kotlin.kapt)
 }
 
 android {
@@ -63,10 +64,10 @@ dependencies {
     //hilt dependencies
     implementation(libs.hilt.android)
     implementation(libs.androidx.hilt.worker)
-    ksp(libs.hilt.compiler)
     implementation(libs.androidx.hilt.common)
-    ksp(libs.androidx.hilt.compiler)
     implementation(libs.androidx.hilt.navigation.compose)
+    ksp(libs.hilt.compiler)
+    ksp(libs.androidx.hilt.compiler)
 
     // room dependencies
     implementation(libs.androidx.room.runtime)
@@ -84,6 +85,12 @@ dependencies {
 
     // appcompat dependencies
     implementation(libs.androidx.appcompat)
+    implementation(libs.androidx.constraintlayout)
+    implementation(libs.androidx.fragment.ktx)
+    implementation(libs.androidx.databinding.runtime)
+    implementation(libs.navigation.fragment)
+    implementation(libs.material)
+    implementation(libs.androidx.ui.android)
 
     // testing dependencies
     testImplementation(libs.junit)
@@ -93,6 +100,17 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
+    testImplementation(libs.mockito.core)
+    testImplementation(libs.mockito.inline)
+    testImplementation(libs.kotlinx.coroutines.test)
+    testImplementation(libs.androidx.core.testing)
+
+    testImplementation(libs.androidx.hilt.lifecycle.viewmodel)
+    testImplementation(libs.hilt.android.testing)
+    kspTest(libs.dagger.hilt.compiler)
+
+
 }
 
 ksp {
