@@ -10,4 +10,14 @@ data class UserEntity(
     val age: Int,
     val jobTitle: String,
     val gender: String
-)
+) {
+
+    companion object{
+        fun emptyUser() = UserEntity(
+            name = "",
+            age = 0,
+            jobTitle = "",
+            gender = ""
+        )
+    }
+}
