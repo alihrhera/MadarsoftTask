@@ -9,6 +9,8 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.madarsoft.task.presentation.adduser.AddUserViewModel
 import com.madarsoft.task.presentation.adduser.compos.AddUserScreen
+import com.madarsoft.task.presentation.userslist.viewmodel.UsersListVIewModel
+import com.madarsoft.task.presentation.userslist.compos.UsersListScreen
 
 @Composable
 fun MainNavHost() {
@@ -20,12 +22,12 @@ fun MainNavHost() {
         modifier = Modifier.fillMaxSize()
     ) {
         composable("UserListFragment") {
-
+            UsersListScreen(viewModel = hiltViewModel<UsersListVIewModel>())
         }
         composable("AddUserScreen") {
             val viewModel = hiltViewModel<AddUserViewModel>()
             AddUserScreen(viewModel = viewModel) {
-
+                navController.navigate("UserListFragment")
             }
         }
 
