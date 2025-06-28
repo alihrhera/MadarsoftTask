@@ -11,6 +11,17 @@ android {
     namespace = "com.madarsoft.task"
     compileSdk = 36
 
+    packaging {
+        resources {
+            excludes += "META-INF/LICENSE.md"
+            excludes += "META-INF/LICENSE"
+            excludes += "META-INF/NOTICE.md"
+            excludes += "META-INF/NOTICE"
+            excludes += "META-INF/LICENSE-notice.md"
+            excludes += "META-INF/NOTICE-notice.md"
+        }
+    }
+
     defaultConfig {
         applicationId = "com.madarsoft.task"
         minSdk = 24
@@ -102,6 +113,8 @@ dependencies {
 
     testImplementation(libs.mockito.core)
     testImplementation(libs.mockito.inline)
+    androidTestImplementation(libs.mockito.android)
+
     testImplementation(libs.kotlinx.coroutines.test)
     testImplementation(libs.androidx.core.testing)
 
@@ -109,8 +122,10 @@ dependencies {
     testImplementation(libs.hilt.android.testing)
     kspTest(libs.dagger.hilt.compiler)
     testImplementation(kotlin("test"))
-    testImplementation(libs.mockk)
     testImplementation(libs.kotlinx.coroutines.test)
+
+    androidTestImplementation( "io.mockk:mockk-android:1.14.4")
+
 
 }
 

@@ -19,7 +19,7 @@ hiltWoker = "1.2.0"
 androidxHilt = "1.2.0"
 mockitoCore = "5.18.0"
 mockitoInline = "5.2.0"
-mockk = "1.14.4"
+mockitoAndroid = "5.18.0"
 room = "2.7.2"
 workManager = "2.10.2"
 coroutinesCore = "1.10.2"
@@ -78,9 +78,9 @@ kotlinx-coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-
 
 kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "kotlinxCoroutinesTest" }
 material = { module = "com.google.android.material:material", version.ref = "material" }
-mockito-core = { module = "org.mockito:mockito-core", version.ref = "mockitoCore" }
-mockito-inline = { module = "org.mockito:mockito-inline", version.ref = "mockitoInline" }
-mockk = { module = "io.mockk:mockk", version.ref = "mockk" }
+mockito-core = { group = "org.mockito",name="mockito-core", version.ref = "mockitoCore" }
+mockito-inline = { group = "org.mockito",name="mockito-inline", version.ref = "mockitoInline" }
+mockito-android = { group = "org.mockito", name = "mockito-android", version.ref = "mockitoAndroid" }
 androidx-core-testing = { module = "androidx.arch.core:core-testing", version.ref = "coreTesting" }
 hilt-android-testing = { module = "com.google.dagger:hilt-android-testing", version.ref = "hiltAndroidTesting" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
