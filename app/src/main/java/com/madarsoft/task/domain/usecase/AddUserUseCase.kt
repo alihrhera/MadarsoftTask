@@ -3,6 +3,7 @@ package com.madarsoft.task.domain.usecase
 import com.madarsoft.task.core.BaseDataResponse
 import com.madarsoft.task.core.BaseMapper
 import com.madarsoft.task.core.BaseUseCase
+import com.madarsoft.task.core.BaseUseCaseWithPrams
 import com.madarsoft.task.core.BaseValidator
 import com.madarsoft.task.data.local.users.UserEntity
 import com.madarsoft.task.domain.model.User
@@ -15,7 +16,7 @@ class AddUserUseCase @Inject constructor(
     private val repository: UserRepository,
     private val mapper: BaseMapper<UserEntity, User>,
     private val validator: BaseValidator<UserEntity>
-) : BaseUseCase<UserEntity, MutableStateFlow<BaseDataResponse<User>>> {
+) : BaseUseCaseWithPrams<UserEntity, MutableStateFlow<BaseDataResponse<User>>> {
     suspend operator fun invoke(user: UserEntity):
             MutableStateFlow<BaseDataResponse<User>> {
         return try {

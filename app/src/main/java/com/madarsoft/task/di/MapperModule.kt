@@ -4,6 +4,7 @@ import com.madarsoft.task.core.BaseMapper
 import com.madarsoft.task.core.BaseValidator
 import com.madarsoft.task.data.local.users.UserEntity
 import com.madarsoft.task.domain.mapper.UserMapper
+import com.madarsoft.task.domain.mapper.UsersListMapper
 import com.madarsoft.task.domain.model.User
 import com.madarsoft.task.domain.validation.AddUserValidator
 import dagger.Module
@@ -19,4 +20,8 @@ object MapperModule {
     @Provides
     @Singleton
     fun provideUserMapper(): BaseMapper<UserEntity, User> = UserMapper()
+
+    @Provides
+    @Singleton
+    fun provideUsersMapper(): BaseMapper<List<UserEntity>, List<User>> = UsersListMapper()
 }

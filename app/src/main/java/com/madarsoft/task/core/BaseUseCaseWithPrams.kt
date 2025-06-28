@@ -3,9 +3,8 @@ package com.madarsoft.task.core
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 
-interface BaseUseCase< out Result> {
-    suspend fun execute(): Result
-
+interface BaseUseCaseWithPrams<in Param, out Result> {
+    suspend fun execute(params: Param): Result
     suspend fun <T, R> mapResponseToStateFlow(
         response: Flow<BaseDataResponse<T>>,
         mapper: BaseMapper<T, R>

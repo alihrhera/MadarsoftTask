@@ -11,6 +11,11 @@
         tools:layout="@layout/fragment_add_user"
         />
     <fragment
+        android:name="com.madarsoft.task.presentation.userslist.view.UsersListFragment"
+        android:id="@+id/users_list_fragment"
+        tools:layout="@layout/fragment_users_list"
+        />
+    <fragment
         android:name="com.madarsoft.task.presentation.adduser.compos.AddUserFragmentCompos"
         android:id="@+id/add_user_screen"
         tools:layout="@layout/fragment_add_user"

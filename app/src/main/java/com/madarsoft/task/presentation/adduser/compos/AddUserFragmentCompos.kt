@@ -20,12 +20,8 @@ class AddUserFragmentCompos : Fragment() {
         ComposeView(requireContext()).apply {
             setViewCompositionStrategy(ViewCompositionStrategy.DisposeOnViewTreeLifecycleDestroyed)
             setContent {
-                val mainNavHost = MainNavHost()
-                val vm: AddUserViewModel = hiltViewModel()
                 Scaffold {
-                    AddUserScreen(viewModel = vm) {
-
-                    }
+                    MainNavHost()
                 }
             }
         }

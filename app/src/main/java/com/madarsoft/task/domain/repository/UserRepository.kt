@@ -6,4 +6,5 @@ import kotlinx.coroutines.flow.Flow
 
 interface UserRepository {
     suspend fun addUser(user: UserEntity): Flow<BaseDataResponse<UserEntity>>
+    suspend fun getLocalUser(): Flow<BaseDataResponse<List<UserEntity>>>
 }

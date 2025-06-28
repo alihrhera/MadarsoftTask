@@ -109,11 +109,11 @@
 
                 <com.google.android.material.button.MaterialButton
                     android:layout_width="match_parent"
-                    android:layout_height="42dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginHorizontal="24dp"
                     android:backgroundTint="@color/purple_700"
                     android:gravity="center"
-                    android:minHeight="42dp"
+                    android:minHeight="48dp"
                     android:onClick="@{()->viewModel.submit()}"
                     android:text="@string/add_user"
                     app:cornerRadius="16dp"
@@ -135,11 +135,11 @@
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/registered_users"
                 android:layout_width="match_parent"
-                android:layout_height="42dp"
+                android:layout_height="wrap_content"
                 android:layout_marginHorizontal="24dp"
                 android:backgroundTint="@color/pink40"
                 android:gravity="center"
-                android:minHeight="42dp"
+                android:minHeight="48dp"
                 android:text="@string/registered_users"
                 app:cornerRadius="16dp"
                 app:layout_constraintBottom_toBottomOf="parent"
