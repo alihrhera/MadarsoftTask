@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Madarsoft task</string>
+    <string name="add_user">Add User</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="gender">Gender</string>
+    <string name="jobTitle">Job title</string>
+    <string name="age">Age</string>
+    <string name="user_name">User Name</string>
+    <string name="registered_users">Registered Users</string>
+    <string name="open_xml">Xml View</string>
+    <string name="open_compose">Compose</string>
 </resources>
