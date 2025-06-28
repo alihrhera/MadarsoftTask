@@ -1,14 +1,29 @@
+import org.gradle.kotlin.dsl.androidTest
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.hilt)
     alias(libs.plugins.kotlin.ksp)
+    alias(libs.plugins.kotlin.kapt)
 }
 
 android {
     namespace = "com.madarsoft.task"
     compileSdk = 36
+
+
+    packaging {
+        resources {
+            excludes += "META-INF/LICENSE.md"
+            excludes += "META-INF/LICENSE"
+            excludes += "META-INF/NOTICE.md"
+            excludes += "META-INF/NOTICE"
+            excludes += "META-INF/LICENSE-notice.md"
+            excludes += "META-INF/NOTICE-notice.md"
+        }
+    }
 
     defaultConfig {
         applicationId = "com.madarsoft.task"
@@ -35,13 +50,12 @@ android {
     }
     buildFeatures {
         compose = true
-        dataBinding=true
+        dataBinding = true
     }
 
 }
 
 dependencies {
-
 
 
     // base dependencies
@@ -63,10 +77,10 @@ dependencies {
     //hilt dependencies
     implementation(libs.hilt.android)
     implementation(libs.androidx.hilt.worker)
-    ksp(libs.hilt.compiler)
     implementation(libs.androidx.hilt.common)
-    ksp(libs.androidx.hilt.compiler)
     implementation(libs.androidx.hilt.navigation.compose)
+    ksp(libs.hilt.compiler)
+    ksp(libs.androidx.hilt.compiler)
 
     // room dependencies
     implementation(libs.androidx.room.runtime)
@@ -84,15 +98,38 @@ dependencies {
 
     // appcompat dependencies
     implementation(libs.androidx.appcompat)
+    implementation(libs.androidx.constraintlayout)
+    implementation(libs.androidx.fragment.ktx)
+    implementation(libs.androidx.databinding.runtime)
+    implementation(libs.navigation.fragment)
+    implementation(libs.material)
+    implementation(libs.androidx.ui.android)
 
     // testing dependencies
-    testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.androidx.ui.test.junit4)
+    androidTestImplementation(libs.mockito.android)
+    androidTestImplementation( libs.mockk.android)
+    androidTestImplementation(libs.hilt.android.testing)
+    androidTestImplementation(libs.truth)
+
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
+    testImplementation(libs.truth)
+    testImplementation(libs.mockito.core)
+    testImplementation(libs.mockito.inline)
+    testImplementation(libs.junit)
+    testImplementation(libs.kotlinx.coroutines.test)
+    testImplementation(libs.androidx.core.testing)
+    testImplementation(libs.androidx.hilt.lifecycle.viewmodel)
+    testImplementation(libs.hilt.android.testing)
+    kspTest(libs.dagger.hilt.compiler)
+    testImplementation(kotlin("test"))
+    testImplementation(libs.kotlinx.coroutines.test)
+    kspAndroidTest(libs.dagger.hilt.compiler)
 }
 
 ksp {
