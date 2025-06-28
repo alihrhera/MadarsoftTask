@@ -36,13 +36,12 @@ android {
     }
     buildFeatures {
         compose = true
-        dataBinding=true
+        dataBinding = true
     }
 
 }
 
 dependencies {
-
 
 
     // base dependencies
@@ -109,7 +108,9 @@ dependencies {
     testImplementation(libs.androidx.hilt.lifecycle.viewmodel)
     testImplementation(libs.hilt.android.testing)
     kspTest(libs.dagger.hilt.compiler)
-
+    testImplementation(kotlin("test"))
+    testImplementation(libs.mockk)
+    testImplementation(libs.kotlinx.coroutines.test)
 
 }
 
