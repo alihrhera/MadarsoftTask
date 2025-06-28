@@ -160,6 +160,10 @@ Email: alihrhera1@gmail.com
 
 ---
 
+## you can test the app with the following command:
+fine apk from url https://drive.google.com/drive/folders/1g2WPXgmOaib_sj83Rs93TfmzKlCYIVCQ?usp=sharing
+
+
 ## 📚 Useful References
 
 - [Jetpack Compose Documentation](https://developer.android.com/jetpack/compose)
