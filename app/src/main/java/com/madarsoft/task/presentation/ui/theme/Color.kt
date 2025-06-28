@@ -1,4 +1,4 @@
-package com.madarsoft.task.ui.theme
+package com.madarsoft.task.presentation.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

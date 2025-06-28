@@ -1,6 +1,5 @@
-package com.madarsoft.task.ui.theme
+package com.madarsoft.task.presentation.ui.theme
 
-import android.app.Activity
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
