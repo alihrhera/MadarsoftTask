@@ -7,7 +7,7 @@ import androidx.compose.ui.test.performClick
 import androidx.compose.ui.test.performTextInput
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.madarsoft.task.data.local.users.UserEntity
-import com.madarsoft.task.presentation.adduser.AddUserViewModel
+import com.madarsoft.task.presentation.adduser.viewmodel.AddUserViewModel
 import io.mockk.Runs
 import io.mockk.every
 import io.mockk.just

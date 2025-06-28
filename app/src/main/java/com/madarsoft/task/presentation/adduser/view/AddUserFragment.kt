@@ -14,7 +14,7 @@ import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
 import com.madarsoft.task.R
 import com.madarsoft.task.databinding.FragmentAddUserBinding
-import com.madarsoft.task.presentation.adduser.AddUserViewModel
+import com.madarsoft.task.presentation.adduser.viewmodel.AddUserViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch

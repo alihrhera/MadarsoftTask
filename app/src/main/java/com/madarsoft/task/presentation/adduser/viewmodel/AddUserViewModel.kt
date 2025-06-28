@@ -1,4 +1,4 @@
-package com.madarsoft.task.presentation.adduser
+package com.madarsoft.task.presentation.adduser.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData

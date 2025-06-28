@@ -6,6 +6,7 @@ import com.madarsoft.task.core.BaseDataResponse
 import com.madarsoft.task.data.local.users.UserEntity
 import com.madarsoft.task.domain.model.User
 import com.madarsoft.task.domain.usecase.AddUserUseCase
+import com.madarsoft.task.presentation.adduser.viewmodel.AddUserViewModel
 import com.madarsoft.task.utils.errors.UserInputScreenErrors
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi

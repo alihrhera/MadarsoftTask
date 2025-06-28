@@ -27,7 +27,7 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.madarsoft.task.R
-import com.madarsoft.task.presentation.adduser.AddUserViewModel
+import com.madarsoft.task.presentation.adduser.viewmodel.AddUserViewModel
 import com.madarsoft.task.presentation.ui.theme.Pink40
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.testTag

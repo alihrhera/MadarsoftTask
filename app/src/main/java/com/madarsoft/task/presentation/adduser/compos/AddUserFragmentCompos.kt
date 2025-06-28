@@ -9,8 +9,8 @@ import androidx.compose.ui.platform.ComposeView
 import androidx.compose.ui.platform.ViewCompositionStrategy
 import androidx.fragment.app.Fragment
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.madarsoft.task.presentation.adduser.AddUserViewModel
-import com.madarsoft.task.presentation.home.MainNavHost
+import com.madarsoft.task.presentation.adduser.viewmodel.AddUserViewModel
+import com.madarsoft.task.presentation.navigation.MainNavHost
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
