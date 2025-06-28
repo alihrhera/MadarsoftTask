@@ -7,6 +7,7 @@ import javax.inject.Inject
 
 class AddUserValidator @Inject constructor(): BaseValidator<UserEntity> {
 
+    @Throws(UserInputScreenErrors::class)
     override fun validate(value: UserEntity) {
         val errors = mutableMapOf<String, String>()
 
