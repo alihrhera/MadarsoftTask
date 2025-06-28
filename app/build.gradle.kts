@@ -1,3 +1,5 @@
+import org.gradle.kotlin.dsl.androidTest
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
@@ -10,6 +12,7 @@ plugins {
 android {
     namespace = "com.madarsoft.task"
     compileSdk = 36
+
 
     packaging {
         resources {
@@ -103,30 +106,30 @@ dependencies {
     implementation(libs.androidx.ui.android)
 
     // testing dependencies
-    testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.androidx.ui.test.junit4)
+    androidTestImplementation(libs.mockito.android)
+    androidTestImplementation( libs.mockk.android)
+    androidTestImplementation(libs.hilt.android.testing)
+    androidTestImplementation(libs.truth)
+
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
+    testImplementation(libs.truth)
     testImplementation(libs.mockito.core)
     testImplementation(libs.mockito.inline)
-    androidTestImplementation(libs.mockito.android)
-
+    testImplementation(libs.junit)
     testImplementation(libs.kotlinx.coroutines.test)
     testImplementation(libs.androidx.core.testing)
-
     testImplementation(libs.androidx.hilt.lifecycle.viewmodel)
     testImplementation(libs.hilt.android.testing)
     kspTest(libs.dagger.hilt.compiler)
     testImplementation(kotlin("test"))
     testImplementation(libs.kotlinx.coroutines.test)
-
-    androidTestImplementation( "io.mockk:mockk-android:1.14.4")
-
-
+    kspAndroidTest(libs.dagger.hilt.compiler)
 }
 
 ksp {
