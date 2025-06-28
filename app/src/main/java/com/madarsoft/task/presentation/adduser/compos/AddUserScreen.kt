@@ -30,6 +30,9 @@ import com.madarsoft.task.R
 import com.madarsoft.task.presentation.adduser.AddUserViewModel
 import com.madarsoft.task.presentation.ui.theme.Pink40
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.testTag
+import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.semantics
 
 @Composable
 fun AddUserScreen(
@@ -84,6 +87,8 @@ fun AddUserScreenContent(
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(vertical = 12.dp)
+                .testTag("name_input_field")
+                .semantics { contentDescription = "User's name input field" }
         )
         if (state.errors["name"] != null) {
             Text(state.errors["name"] ?: "", color = Color.Red)
@@ -98,6 +103,7 @@ fun AddUserScreenContent(
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(vertical = 12.dp)
+                .semantics { contentDescription = "User's age input field" }
         )
         if (state.errors["age"] != null) {
             Text(state.errors["age"] ?: "", color = Color.Red)
@@ -111,18 +117,22 @@ fun AddUserScreenContent(
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(vertical = 12.dp)
+                .semantics { contentDescription = "User's job title input field" }
         )
         if (state.errors["jobTitle"] != null) {
             Text(state.errors["jobTitle"] ?: "", color = Color.Red)
         }
 
+        // Gender section header
         Text(
             stringResource(R.string.gender),
             modifier = Modifier
                 .padding(vertical = 12.dp)
                 .align(Alignment.Start)
+                .semantics { contentDescription = "Gender selection" }
         )
 
+        // Gender selection
         Row(
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.spacedBy(16.dp),
@@ -141,11 +151,18 @@ fun AddUserScreenContent(
             onClick = onSubmit,
             modifier = Modifier
                 .fillMaxWidth()
+                .testTag("add_user_button")
                 .padding(vertical = 12.dp),
-            enabled = !state.isLoading
+            //enabled = !state.isLoading
         ) {
+
+            print("IS LOADING: ${state.isLoading}")
             if (state.isLoading)
-                CircularProgressIndicator()
+                CircularProgressIndicator(
+                    modifier = Modifier
+                        .semantics { contentDescription = "Loading indicator" }
+                        .testTag("loading_indicator")
+                )
             else
                 Text(stringResource(R.string.add_user))
         }
@@ -165,16 +182,17 @@ fun AddUserScreenContent(
 @Composable
 fun GenderRadioButton(value: String, label: String, selectedGender: String, onGenderChanged: (String) -> Unit) {
     Row(
-        verticalAlignment = Alignment.CenterVertically
+        verticalAlignment = Alignment.CenterVertically,
+        modifier = Modifier.semantics { contentDescription = "Gender option: $label" }
     ) {
         RadioButton(
             selected = selectedGender == value,
-            onClick = { onGenderChanged(value) }
+            onClick = { onGenderChanged(value) },
+            modifier = Modifier.semantics { contentDescription = "Select $label" }
         )
         Text(text = label)
     }
 }
-
 
 @Preview(showBackground = true, uiMode = Configuration.UI_MODE_NIGHT_NO)
 @Composable
