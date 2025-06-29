@@ -12,7 +12,7 @@ An Android application built in **Kotlin** using **Jetpack Compose**, following 
 - **Add User Screen**
   - Fields: Name, Email, Gender
   - Validations for required fields and email format
-  - Gender dropdown menu
+  - Gender radio group
   - Error messages with real-time feedback
 
 - **User List Screen**
@@ -31,7 +31,7 @@ An Android application built in **Kotlin** using **Jetpack Compose**, following 
   - Uses Hilt to inject ViewModels, Repositories, DAOs
 
 - **UI & Navigation**
-  - Built entirely in Jetpack Compose
+  - Built using a mix of Jetpack Compose and XML
   - Navigation component for screen routing
 
 - **Testing**
@@ -87,7 +87,6 @@ Core
                      │           Data               │
                      │ ┌──── Repository Impl ─────┐ │
                      │ │   - Room (DAO)           │ │
-                     │ │                          │ │
                      │ └──────────────────────────┘ │
                      └──────────────────────────────┘
 
